@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abstract Help Center</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Boxicons CDN -->
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <!-- Font Awesome for additional icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+  .help-text {
+    text-decoration: none;
+    color: inherit;
+  }
+</style>
+
+</head>
+<body>
+
+  <!-- Top Header -->
+  <header>
+  <div class="top-bar">
+    <div class="logo">
+      <img src="logo.png" alt="Logo" class="logo-img">
+      <a href="help.html" class="help-text">| Help Center</a>
+    </div>
+
+    <div class="header-controls">
+      <div class="headers-search">
+        <input type="text" placeholder="Search" />
+        <button aria-label="Search"><i class='bx bx-search'></i></button>
+      </div>
+
+      <button class="btn request-btn">Submit a request</button>
+      <button class="btn signin-btn">Sign in</button>
+    </div>
+  </div>
+</header>
+
+
+
+  <!-- Hero Section -->
+  <div class="hero">
+    <div class="hero-content">
+      <h1>How can we help?</h1>
+      <div class="hero-search">
+        <input type="text" placeholder="Search" />
+        <button class="search-arrow">→</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Content Sections -->
+  <main class="content-sections">
+    <section class="content-item">
+      <img src="images/first.png" alt="Branches Icon" class="content-icon">
+      <div class="content-text">
+        <h2>Using Abstract</h2>
+        <p>Abstract lets you manage, version, and document your designs in one place.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </section>
+
+    <section class="content-item">
+      <img src="images/sec.png" alt="Organization Icon" class="content-icon">
+      <div class="content-text">
+        <h2>Manage your account</h2>
+        <p>Configure your account settings, such as your email, profile details, and <br>password.
+</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </section>
+
+    <section class="content-item">
+      <img src="images/third.png" alt="Authentication Icon" class="content-icon">
+      <div class="content-text">
+        <h2>Manage organizations, teams, and projects</h2>
+        <p>Use Abstract organizations, teams, and projects to organize your people and your work.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </section>
+
+    <section class="content-item">
+      <img src="images/fourth.png" alt="Account Icon" class="content-icon">
+      <div class="content-text">
+        <h2>Manage billing</h2>
+        <p>Change subscriptions and payment details.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </section>
+
+    <section class="content-item">
+      <img src="images/fif.png" alt="Billing Icon" class="content-icon">
+      <div class="content-text">
+        <h2>Authenticate to Abstract</h2>
+        <p>Set up and configure SSO, SCIM, and Just-in-Time provisioning.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </section>
+
+    <section class="content-item">
+      <img src="images/seventh.png" alt="Support Icon" class="content-icon">
+      <div class="content-text">
+        <h2>Abstract support</h2>
+        <p>Get in touch with a human.</p>
+        <a href="#" class="learn-more">Learn More →</a>
+      </div>
+    </section>
+  </main>
+<footer class="footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <h3>Abstract</h3>
+      <a href="#">Start Trial</a>
+      <a href="#">Pricing</a>
+      <a href="#">Download</a>
+    </div>
+    <div class="footer-column">
+      <h3>Resources</h3>
+      <a href="#">Blog</a>
+      <a href="#">Help Center</a>
+      <a href="#">Release Notes</a>
+      <a href="#">Status</a>
+    </div>
+    <div class="footer-column">
+      <h3>Community</h3>
+      <a href="#">Twitter</a>
+      <a href="#">LinkedIn</a>
+      <a href="#">Facebook</a>
+      <a href="#">Dribbble</a>
+      <a href="#">Podcast</a>
+    </div>
+    <div class="footer-column">
+      <h3>Company</h3>
+      <a href="#">About Us</a>
+      <a href="#">Careers</a>
+      <a href="#">Legal</a>
+      <h4>Contact Us</h4>
+      <p>info@goabstract.com</p>
+    </div>
+  </div>
+<div class="footer-bottom">
+    <img src="logo.png" alt="Logo" class="logo-img">
+    <p>© Copyright 2025 <br> Abstract Studio Design, Inc.<br>All rights reserved</p>
+    
+  </div>
+
+
+
+  <!-- Help Floating Icon -->
+ <div class="help-icon" onclick="toggleHelp()">
+  <i class='bx bx-help-circle'></i>
+  <span class="help-label">Help</span>
+</div>
+
+
+  <!-- Dynamic Help Popup -->
+  <div id="help-popup" class="help-popup">
+    <div class="help-header">
+      <span>Help Center</span>
+      <i class='bx bx-x' onclick="toggleHelp()"></i>
+    </div>
+    <div class="help-content" id="help-content">
+      <!-- This content can be loaded dynamically -->
+      <p>Welcome to the help center! Here's where you can find assistance on common questions, getting started, and support.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+
+
+<script>
+  function toggleHelp() {
+    const popup = document.getElementById('help-popup');
+    popup.style.display = popup.style.display === 'flex' ? 'none' : 'flex';
+
+    // Optional: load dynamic content (simulate here)
+    const helpText = "Here you can ask questions or find answers about Abstract's tools, pricing, and features.";
+    document.getElementById('help-content').innerHTML = `<p>${helpText}</p>`;
+  }
+</script>
+
+</html>
